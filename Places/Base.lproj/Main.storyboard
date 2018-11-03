@@ -66,7 +66,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m9o-v2-PuA">
-                                                    <rect key="frame" x="147" y="15" width="120" height="120"/>
+                                                    <rect key="frame" x="147" y="14.666666666666671" width="120" height="120.00000000000001"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="BDK-Gh-wP5"/>
                                                         <constraint firstAttribute="width" constant="120" id="zbd-nc-Csn"/>
@@ -94,7 +94,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place's name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgg-ft-Kgz">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place's name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cgg-ft-Kgz">
                                                     <rect key="frame" x="20" y="6" width="374" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

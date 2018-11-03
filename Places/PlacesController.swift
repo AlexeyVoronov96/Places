@@ -41,7 +41,12 @@ class PlacesController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlacesCell
         let currentPlace = places[indexPath.row]
-        cell.nameLabel.text = currentPlace.name
+        if currentPlace.name != "" {
+            cell.nameLabel.text = currentPlace.name
+        } else {
+            cell.nameLabel.text = "Place".localize() + " \(indexPath.row + 1)"
+        }
+
         cell.dateLabel.text = currentPlace.dateString
         if currentPlace.imageSmall != nil {
             cell.placeImage.image = UIImage(data: currentPlace.imageSmall! as Data)

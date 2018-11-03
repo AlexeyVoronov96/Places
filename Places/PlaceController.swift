@@ -63,9 +63,7 @@ class PlaceController: UITableViewController {
     }
     
     @IBAction func doneButton(_ sender: Any) {
-        if place?.name != textName.text || place?.imageActual != image.image {
-            savePlace()
-        }
+        savePlace()
         navigationController?.popViewController(animated: true)
     }
     
