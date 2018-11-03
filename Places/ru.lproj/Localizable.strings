@@ -1,0 +1,13 @@
+/* 
+  Localized.strings
+  Places
+
+  Created by Алексей Воронов on 04/11/2018.
+  Copyright © 2018 Алексей Воронов. All rights reserved.
+*/
+
+"New place" = "Новое место";
+"Take a photo" = "Сфотографировать";
+"Choose from library" = "Выбрать из библиотеки";
+"Remove image" = "Удалить изображение";
+"Cancel" = "Отмена";

@@ -1,0 +1,24 @@
+
+/* Class = "UITabBarItem"; title = "List"; ObjectID = "6cD-Bk-TOg"; */
+"6cD-Bk-TOg.title" = "Список";
+
+/* Class = "UINavigationItem"; title = "Place's name"; ObjectID = "9tN-P3-Yho"; */
+"9tN-P3-Yho.title" = "Название места";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MSD-b6-ut4"; */
+"MSD-b6-ut4.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Places Map"; ObjectID = "Ugs-bD-6Tb"; */
+"Ugs-bD-6Tb.title" = "Места";
+
+/* Class = "UITextField"; placeholder = "Place's name"; ObjectID = "cgg-ft-Kgz"; */
+"cgg-ft-Kgz.placeholder" = "Название места";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "i6w-3I-eEu"; */
+"i6w-3I-eEu.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Places List"; ObjectID = "qUo-pX-Zbu"; */
+"qUo-pX-Zbu.title" = "Список мест";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "woE-qV-OBr"; */
+"woE-qV-OBr.title" = "Карта";

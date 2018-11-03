@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C31g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="location" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imageSmall" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="imageBig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlaceImage" inverseName="place" inverseEntity="PlaceImage" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="place" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="PlaceImage" representedClassName="PlaceImage" syncable="YES">
+        <attribute name="imageBig" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="imageBig" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Place" positionX="-36" positionY="9" width="128" height="120"/>
+        <element name="Location" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="PlaceImage" positionX="27" positionY="72" width="128" height="75"/>
+    </elements>
+</model>
