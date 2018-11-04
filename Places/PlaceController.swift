@@ -72,8 +72,7 @@ class PlaceController: UITableViewController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if place?.name != "" || place?.imageActual != nil || textName.text != "" || image.image != nil {
             alert.addAction(UIAlertAction(title: "Remove place".localize(), style: .destructive, handler: { (action) in
-                CoreDataManager.sharedInstance.managedObjectContext.delete(self.place!)
-                CoreDataManager.sharedInstance.saveContext()
+                self.deletePlace()
                 self.navigationController?.popViewController(animated: true)
             }))
         }
@@ -94,8 +93,7 @@ class PlaceController: UITableViewController {
     func savePlace() {
         
         if textName.text == "" && image.image == nil {
-            CoreDataManager.sharedInstance.managedObjectContext.delete(place!)
-            CoreDataManager.sharedInstance.saveContext()
+            self.deletePlace()
             return
         }
         
@@ -109,6 +107,11 @@ class PlaceController: UITableViewController {
         
         CoreDataManager.sharedInstance.saveContext()
         
+    }
+    
+    func deletePlace() {
+        CoreDataManager.sharedInstance.managedObjectContext.delete(self.place!)
+        CoreDataManager.sharedInstance.saveContext()
     }
     
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {

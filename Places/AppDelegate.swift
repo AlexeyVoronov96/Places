@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        for place in places {
+            if place.imageActual == nil && place.name == "" {
+                CoreDataManager.sharedInstance.managedObjectContext.delete(place)
+            }
+        }
         CoreDataManager.sharedInstance.saveContext()
     }
 
