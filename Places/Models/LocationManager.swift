@@ -23,6 +23,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     static let sharedInstance = LocationManager()
 
+    //MARK: - Properties
     var manager = CLLocationManager()
     
     func requestAuthorization() {
@@ -31,6 +32,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     var blockForSave: ((LocationCoordinate) -> Void)?
     
+    //MARK: - Receiving current location
     func getCurrentLocation(block: ((LocationCoordinate) -> Void)?) {
         if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             return

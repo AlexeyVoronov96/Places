@@ -9,34 +9,16 @@
 import UIKit
 import MapKit
 
-class PlaceAnnotation: NSObject, MKAnnotation {
-    
-    var place: Place
-    var coordinate: CLLocationCoordinate2D
-    var title: String?
-    var subtitle: String?
-    
-    init(place: Place) {
-        self.place = place
-        title = place.name
-        
-        if place.locationActual != nil {
-            coordinate = CLLocationCoordinate2D(latitude: place.locationActual!.lat, longitude: place.locationActual!.lon)
-        } else {
-            coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        }
-    }
-    
-}
-
 class PlaceController: UITableViewController {
     
+    //MARK: - Properties
     var place: Place?
 
     @IBOutlet var image: UIImageView!
     @IBOutlet var textName: UITextField!
     @IBOutlet var mapView: MKMapView!
     
+    //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
         if place?.name != "" {
@@ -62,6 +44,7 @@ class PlaceController: UITableViewController {
         mapView.gestureRecognizers = [lpgr]
     }
     
+    //MARK: - Navigation bar buttons
     @IBAction func doneButton(_ sender: Any) {
         savePlace()
         navigationController?.popViewController(animated: true)
@@ -90,6 +73,7 @@ class PlaceController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //MARK: - Working with data
     func savePlace() {
         
         if textName.text == "" && image.image == nil {
@@ -114,6 +98,7 @@ class PlaceController: UITableViewController {
         CoreDataManager.sharedInstance.saveContext()
     }
     
+    //MARK: - Changing location with long press
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state != .began {
             return
@@ -126,6 +111,7 @@ class PlaceController: UITableViewController {
         mapView.addAnnotation(PlaceAnnotation(place: place!))
     }
     
+    //MARK: - Adding image
     let imagePicker: UIImagePickerController = UIImagePickerController()
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && indexPath.section == 0 {
@@ -156,6 +142,7 @@ class PlaceController: UITableViewController {
 
 }
 
+//MARK: - Working with image picker
 extension PlaceController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -169,6 +156,7 @@ extension PlaceController: UIImagePickerControllerDelegate, UINavigationControll
     
 }
 
+//MARK: - Working with map annotation
 extension PlaceController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

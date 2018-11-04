@@ -9,7 +9,8 @@
 import UIKit
 
 class PlacesController: UITableViewController {
-
+    
+    //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,6 +21,7 @@ class PlacesController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
+    //MARK: - Navigation bar button
     var selectedPlace: Place?
     @IBAction func addPlaceAction(_ sender: Any) {
         selectedPlace = Place.newPlace(name: "")
@@ -27,6 +29,7 @@ class PlacesController: UITableViewController {
         performSegue(withIdentifier: "addPlace", sender: self)
     }
     
+    //MARK: - Filling table view
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -41,22 +44,11 @@ class PlacesController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlacesCell
-        let currentPlace = places[indexPath.row]
-        if currentPlace.name != "" {
-            cell.nameLabel.text = currentPlace.name
-        } else {
-            cell.nameLabel.text = "Place".localize() + " \(indexPath.row + 1)"
-        }
-
-        cell.dateLabel.text = currentPlace.dateString
-        if currentPlace.imageSmall != nil {
-            cell.placeImage.image = UIImage(data: currentPlace.imageSmall! as Data)
-        } else {
-            cell.placeImage?.image = UIImage(named: "logoRed.png")
-        }
+        cell.initCell(place: places[indexPath.row], index: indexPath)
         return cell
     }
 
+    //MARK: - Deleting table view cells
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -71,6 +63,7 @@ class PlacesController: UITableViewController {
         }    
     }
     
+    //MARK: - Segue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let currentPlace = places[indexPath.row]

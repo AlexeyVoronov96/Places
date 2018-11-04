@@ -11,8 +11,10 @@ import MapKit
 
 class MapController: UIViewController {
     
+    //MARK: - Properties
     @IBOutlet var mapView: MKMapView!
     
+    //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,7 @@ class MapController: UIViewController {
         }
     }
     
+    //MARK: - Processing long press
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state != .began {
             return
@@ -47,6 +50,7 @@ class MapController: UIViewController {
 
 }
 
+//MARK: - Working with map annotations
 extension MapController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
