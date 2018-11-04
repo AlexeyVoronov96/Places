@@ -116,11 +116,13 @@ class PlaceController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Take a photo".localize(), style: .default, handler: { (action) in
                 self.imagePicker.sourceType = .camera
                 self.imagePicker.delegate = self
+                self.imagePicker.allowsEditing = true
                 self.present(self.imagePicker, animated: true, completion: nil)
             }))
             alertController.addAction(UIAlertAction(title: "Choose from library".localize(), style: .default, handler: { (action) in
                 self.imagePicker.sourceType = .savedPhotosAlbum
                 self.imagePicker.delegate = self
+                self.imagePicker.allowsEditing = true
                 self.present(self.imagePicker, animated: true, completion: nil)
             }))
             if self.image.image != nil {
@@ -140,7 +142,7 @@ class PlaceController: UITableViewController {
 extension PlaceController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        image.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        image.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         picker.dismiss(animated: true, completion: nil)
     }
     
