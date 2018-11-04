@@ -68,14 +68,27 @@ class PlaceController: UITableViewController {
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        var activities: [Any] = []
-        if place?.imageActual != nil {
-            activities.append(place?.imageActual as Any)
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if place?.name != "" || place?.imageActual != nil || textName.text != "" || image.image != nil {
+            alert.addAction(UIAlertAction(title: "Remove place".localize(), style: .destructive, handler: { (action) in
+                CoreDataManager.sharedInstance.managedObjectContext.delete(self.place!)
+                CoreDataManager.sharedInstance.saveContext()
+                self.navigationController?.popViewController(animated: true)
+            }))
         }
-        activities.append(place?.name ?? "")
-        activities.append(place?.dateString as Any)
-        let activityController = UIActivityViewController(activityItems: activities, applicationActivities: nil)
-        present(activityController, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Share".localize(), style: .default, handler: { (action) in
+            var activities: [Any] = []
+            if self.place?.imageActual != nil {
+                activities.append(self.place?.imageActual as Any)
+            }
+            activities.append(self.place?.name ?? "")
+            activities.append(self.place?.dateString as Any)
+            let activityController = UIActivityViewController(activityItems: activities, applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localize(), style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     func savePlace() {
