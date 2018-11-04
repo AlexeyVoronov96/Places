@@ -10,6 +10,9 @@ import UIKit
 
 class PlacesController: UITableViewController {
     
+    //MARK: - Properties
+    var selectedPlace: Place?
+    
     //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,6 @@ class PlacesController: UITableViewController {
     }
 
     //MARK: - Navigation bar button
-    var selectedPlace: Place?
     @IBAction func addPlaceAction(_ sender: Any) {
         selectedPlace = Place.newPlace(name: "")
         selectedPlace?.addCurrentLocation()
