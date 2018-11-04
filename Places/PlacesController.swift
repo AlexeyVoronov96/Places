@@ -52,7 +52,7 @@ class PlacesController: UITableViewController {
         if currentPlace.imageSmall != nil {
             cell.placeImage.image = UIImage(data: currentPlace.imageSmall! as Data)
         } else {
-            cell.placeImage?.image = UIImage(named: "placeImage.png")
+            cell.placeImage?.image = UIImage(named: "logoRed.png")
         }
         return cell
     }

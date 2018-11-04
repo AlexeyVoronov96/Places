@@ -58,7 +58,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-Uj-53A">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoRed" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-Uj-53A">
                                                     <rect key="frame" x="147" y="14.666666666666671" width="120" height="120.00000000000001"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="miA-Ko-B46"/>
@@ -302,7 +302,7 @@
     </scenes>
     <resources>
         <image name="box" width="27" height="27"/>
+        <image name="logoRed" width="512" height="512"/>
         <image name="map" width="27" height="27"/>
-        <image name="placeImage.png" width="512" height="512"/>
     </resources>
 </document>
