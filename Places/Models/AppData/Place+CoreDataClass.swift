@@ -14,6 +14,7 @@ import UIKit
 @objc(Place)
 public class Place: NSManagedObject {
     
+    //MARK: - Adding Place
     class func newPlace(name: String) -> Place {
         let place = Place(context: CoreDataManager.sharedInstance.managedObjectContext)
         
@@ -23,6 +24,7 @@ public class Place: NSManagedObject {
         return place
     }
     
+    //MARK - Appending images to the Place
     var imageActual: UIImage? {
         set {
             if newValue == nil {
@@ -50,6 +52,14 @@ public class Place: NSManagedObject {
         }
     }
     
+    func addImage(image: UIImage) {
+        let placeImage = PlaceImage(context: CoreDataManager.sharedInstance.managedObjectContext)
+        
+        placeImage.imageBig = image.jpegData(compressionQuality: 1.0) as NSData?
+        self.imageBig = placeImage
+    }
+    
+    //MARK - Appending location to the Place
     var locationActual: LocationCoordinate? {
         set {
             if newValue == nil && self.location != nil {
@@ -83,13 +93,6 @@ public class Place: NSManagedObject {
         }
     }
     
-    func addImage(image: UIImage) {
-        let placeImage = PlaceImage(context: CoreDataManager.sharedInstance.managedObjectContext)
-        
-        placeImage.imageBig = image.jpegData(compressionQuality: 1.0) as NSData?
-        self.imageBig = placeImage
-    }
-    
     func addLocation(latitude: Double, longitude: Double) {
         let placeLocation = Location(context: CoreDataManager.sharedInstance.managedObjectContext)
         
@@ -99,6 +102,7 @@ public class Place: NSManagedObject {
         self.location = placeLocation
     }
     
+    //MARK: - Converting date
     var dateString: String {
         let df = DateFormatter()
         df.dateStyle = .medium
