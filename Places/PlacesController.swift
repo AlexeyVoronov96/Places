@@ -17,6 +17,7 @@ class PlacesController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
         tableView.reloadData()
+        tableView.tableFooterView = UIView()
     }
 
     var selectedPlace: Place?

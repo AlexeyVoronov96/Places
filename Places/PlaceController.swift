@@ -92,6 +92,7 @@ class PlaceController: UITableViewController {
         
         place?.name = textName.text
         place?.imageActual = image.image
+        place?.addCurrentLocation()
         
         CoreDataManager.sharedInstance.saveContext()
         
