@@ -17,11 +17,10 @@ class MapController: UIViewController {
     //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mapView.delegate = self
         mapView.showsUserLocation = true
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         mapView.gestureRecognizers = [lpgr]
+        mapView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -9,7 +9,9 @@
 import UIKit
 import CoreData
 
+//MARK: - Creating an array containing storage data
 var places: [Place] {
+    
     let request = NSFetchRequest<Place>(entityName: "Place")
     
     let sd = NSSortDescriptor(key: "date", ascending: false)
@@ -24,6 +26,7 @@ var places: [Place] {
     return []
 }
 
+//MARK: - Working with local storage
 class CoreDataManager {
     
     static let sharedInstance = CoreDataManager()

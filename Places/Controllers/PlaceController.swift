@@ -13,6 +13,7 @@ class PlaceController: UITableViewController {
     
     //MARK: - Properties
     var place: Place?
+    let imagePicker: UIImagePickerController = UIImagePickerController()
 
     @IBOutlet var image: UIImageView!
     @IBOutlet var textName: UITextField!
@@ -29,19 +30,20 @@ class PlaceController: UITableViewController {
         textName.text = place?.name
         image.image = place?.imageActual
         LocationManager.sharedInstance.requestAuthorization()
-        mapView.delegate = self
         if place?.locationActual != nil {
             mapView.addAnnotation(PlaceAnnotation(place: place!))
             mapView.centerCoordinate = CLLocationCoordinate2D(latitude: place!.locationActual!.lat, longitude: place!.locationActual!.lon)
             mapView.showsUserLocation = false
         } else {
-            mapView.showsUserLocation = true
             LocationManager.sharedInstance.getCurrentLocation { (location) in
                 self.mapView.centerCoordinate = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon)
             }
+            mapView.showsUserLocation = true
         }
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         mapView.gestureRecognizers = [lpgr]
+        mapView.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     //MARK: - Navigation bar buttons
@@ -51,7 +53,6 @@ class PlaceController: UITableViewController {
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if place?.name != "" || place?.imageActual != nil || textName.text != "" || image.image != nil {
             alert.addAction(UIAlertAction(title: "Remove place".localize(), style: .destructive, handler: { (action) in
@@ -87,7 +88,6 @@ class PlaceController: UITableViewController {
         
         place?.name = textName.text
         place?.imageActual = image.image
-        place?.addCurrentLocation()
         
         CoreDataManager.sharedInstance.saveContext()
         
@@ -111,8 +111,18 @@ class PlaceController: UITableViewController {
         mapView.addAnnotation(PlaceAnnotation(place: place!))
     }
     
+    //MARK: - Hiding keyboard
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     //MARK: - Adding image
-    let imagePicker: UIImagePickerController = UIImagePickerController()
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && indexPath.section == 0 {
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
