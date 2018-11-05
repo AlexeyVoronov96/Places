@@ -22,3 +22,6 @@
 
 /* Class = "UITabBarItem"; title = "Map"; ObjectID = "woE-qV-OBr"; */
 "woE-qV-OBr.title" = "Карта";
+
+/* Class = "UILabel"; title = "Click here to add image"; ObjectID = "z8z-fB-gab"; */
+"z8z-fB-gab.title" = "Нажмите, чтобы добавить изображение";

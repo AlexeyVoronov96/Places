@@ -44,6 +44,8 @@ class PlaceController: UITableViewController {
         mapView.gestureRecognizers = [lpgr]
         mapView.delegate = self
         self.hideKeyboardWhenTappedAround()
+        image.layer.cornerRadius = image.frame.height / 2
+        image.layer.masksToBounds = true
     }
     
     //MARK: - Navigation bar buttons

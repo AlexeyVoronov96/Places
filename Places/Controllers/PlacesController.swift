@@ -31,7 +31,7 @@ class PlacesController: UITableViewController {
         performSegue(withIdentifier: "addPlace", sender: self)
     }
     
-    //MARK: - Filling table view
+    //MARK: - Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -65,7 +65,7 @@ class PlacesController: UITableViewController {
         }    
     }
     
-    //MARK: - Segue
+    //MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let currentPlace = places[indexPath.row]

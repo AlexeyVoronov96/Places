@@ -31,6 +31,8 @@ class PlacesCell: UITableViewCell {
         } else {
             placeImage.image = UIImage(named: "logoRed.png")
         }
+        placeImage.layer.cornerRadius = placeImage.frame.height / 2
+        placeImage.layer.masksToBounds = true
     }
 
 }
