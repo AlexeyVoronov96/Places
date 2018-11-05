@@ -86,6 +86,10 @@ class PlaceController: UITableViewController {
             place?.date = NSDate()
         }
         
+        if place?.locationActual == nil {
+            place?.addCurrentLocation()
+        }
+        
         place?.name = textName.text
         place?.imageActual = image.image
         
