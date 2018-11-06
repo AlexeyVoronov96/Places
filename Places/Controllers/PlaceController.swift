@@ -84,19 +84,17 @@ class PlaceController: UITableViewController {
             return
         }
         
-        if place?.name != textName.text || place?.imageActual != image.image {
+        if place?.name != textName.text || place?.imageActual?.pngData() != image.image?.pngData() {
             place?.date = NSDate()
+            place?.name = textName.text
+            place?.imageActual = image.image
         }
-        
+            
         if place?.locationActual == nil {
             place?.addCurrentLocation()
         }
         
-        place?.name = textName.text
-        place?.imageActual = image.image
-        
         CoreDataManager.sharedInstance.saveContext()
-        
     }
     
     func deletePlace() {
@@ -195,6 +193,16 @@ extension PlaceController: MKMapViewDelegate {
             place?.locationActual = newLocation
             CoreDataManager.sharedInstance.saveContext()
         }
+    }
+    
+}
+
+//MARK: - UITextField delegate
+extension PlaceController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        doneButton(self)
+        return true
     }
     
 }
