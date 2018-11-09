@@ -80,6 +80,7 @@
 			children = (
 				AB13CB90218D0ECE004BE183 /* Places */,
 				AB13CB8F218D0ECE004BE183 /* Products */,
+				AB8ADE01219634FB007EE65B /* Screenshots */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +102,6 @@
 				ABC9BBE1218E572400A9CDB7 /* Localizable.strings */,
 				AB925024218FA3EE003258C3 /* Models */,
 				AB925020218FA0F9003258C3 /* View */,
-				AB8ADE01219634FB007EE65B /* Screenshots */,
 				AB925023218FA3CE003258C3 /* Controllers */,
 			);
 			path = Places;
