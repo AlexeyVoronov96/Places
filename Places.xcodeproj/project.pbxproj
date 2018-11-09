@@ -24,10 +24,10 @@
 		AB5940F3218DAE9600E605B0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5940F2218DAE9600E605B0 /* MapController.swift */; };
 		AB868649218DB93700EE81CE /* PlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB868648218DB93700EE81CE /* PlaceController.swift */; };
 		AB86864C218E1EBF00EE81CE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86864B218E1EBF00EE81CE /* LocationManager.swift */; };
-		AB8ADE062196351F007EE65B /* PlaceAddingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE022196351F007EE65B /* PlaceAddingScreen.png */; };
-		AB8ADE072196351F007EE65B /* PlacesMapScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE032196351F007EE65B /* PlacesMapScreen.png */; };
-		AB8ADE082196351F007EE65B /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE042196351F007EE65B /* LaunchScreen.png */; };
-		AB8ADE092196351F007EE65B /* PlacesListScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE052196351F007EE65B /* PlacesListScreen.png */; };
+		AB8ADE0E2196365F007EE65B /* PlacesListScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE0A2196365F007EE65B /* PlacesListScreen.png */; };
+		AB8ADE0F2196365F007EE65B /* PlaceAddingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE0B2196365F007EE65B /* PlaceAddingScreen.png */; };
+		AB8ADE102196365F007EE65B /* PlacesMapScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE0C2196365F007EE65B /* PlacesMapScreen.png */; };
+		AB8ADE112196365F007EE65B /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ADE0D2196365F007EE65B /* LaunchScreen.png */; };
 		AB925022218FA20F003258C3 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB925021218FA20F003258C3 /* PlaceAnnotation.swift */; };
 		ABC9BBDE218E567700A9CDB7 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9BBDD218E567700A9CDB7 /* LocalizationManager.swift */; };
 		ABC9BBDF218E572400A9CDB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABC9BBE1218E572400A9CDB7 /* Localizable.strings */; };
@@ -53,10 +53,10 @@
 		AB5940F2218DAE9600E605B0 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		AB868648218DB93700EE81CE /* PlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceController.swift; sourceTree = "<group>"; };
 		AB86864B218E1EBF00EE81CE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		AB8ADE022196351F007EE65B /* PlaceAddingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceAddingScreen.png; path = ../../../../../Desktop/PlaceAddingScreen.png; sourceTree = "<group>"; };
-		AB8ADE032196351F007EE65B /* PlacesMapScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlacesMapScreen.png; path = ../../../../../Desktop/PlacesMapScreen.png; sourceTree = "<group>"; };
-		AB8ADE042196351F007EE65B /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchScreen.png; path = ../../../../../Desktop/LaunchScreen.png; sourceTree = "<group>"; };
-		AB8ADE052196351F007EE65B /* PlacesListScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlacesListScreen.png; path = ../../../../../Desktop/PlacesListScreen.png; sourceTree = "<group>"; };
+		AB8ADE0A2196365F007EE65B /* PlacesListScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlacesListScreen.png; sourceTree = "<group>"; };
+		AB8ADE0B2196365F007EE65B /* PlaceAddingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceAddingScreen.png; sourceTree = "<group>"; };
+		AB8ADE0C2196365F007EE65B /* PlacesMapScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlacesMapScreen.png; sourceTree = "<group>"; };
+		AB8ADE0D2196365F007EE65B /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 		AB925021218FA20F003258C3 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		ABC9BBD7218E552800A9CDB7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		ABC9BBD8218E552800A9CDB7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 				ABC9BBE1218E572400A9CDB7 /* Localizable.strings */,
 				AB925024218FA3EE003258C3 /* Models */,
 				AB925020218FA0F9003258C3 /* View */,
-				AB925023218FA3CE003258C3 /* Controllers */,
 				AB8ADE01219634FB007EE65B /* Screenshots */,
+				AB925023218FA3CE003258C3 /* Controllers */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -125,10 +125,10 @@
 		AB8ADE01219634FB007EE65B /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				AB8ADE042196351F007EE65B /* LaunchScreen.png */,
-				AB8ADE022196351F007EE65B /* PlaceAddingScreen.png */,
-				AB8ADE052196351F007EE65B /* PlacesListScreen.png */,
-				AB8ADE032196351F007EE65B /* PlacesMapScreen.png */,
+				AB8ADE0D2196365F007EE65B /* LaunchScreen.png */,
+				AB8ADE0B2196365F007EE65B /* PlaceAddingScreen.png */,
+				AB8ADE0A2196365F007EE65B /* PlacesListScreen.png */,
+				AB8ADE0C2196365F007EE65B /* PlacesMapScreen.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -222,12 +222,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB13CB9F218D0ECF004BE183 /* LaunchScreen.storyboard in Resources */,
-				AB8ADE092196351F007EE65B /* PlacesListScreen.png in Resources */,
 				AB13CB9C218D0ECF004BE183 /* Assets.xcassets in Resources */,
-				AB8ADE072196351F007EE65B /* PlacesMapScreen.png in Resources */,
-				AB8ADE082196351F007EE65B /* LaunchScreen.png in Resources */,
-				AB8ADE062196351F007EE65B /* PlaceAddingScreen.png in Resources */,
+				AB8ADE0F2196365F007EE65B /* PlaceAddingScreen.png in Resources */,
+				AB8ADE0E2196365F007EE65B /* PlacesListScreen.png in Resources */,
+				AB8ADE102196365F007EE65B /* PlacesMapScreen.png in Resources */,
 				AB13CB97218D0ECE004BE183 /* Main.storyboard in Resources */,
+				AB8ADE112196365F007EE65B /* LaunchScreen.png in Resources */,
 				ABC9BBDF218E572400A9CDB7 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
