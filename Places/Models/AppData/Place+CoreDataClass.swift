@@ -19,7 +19,7 @@ public class Place: NSManagedObject {
         let place = Place(context: CoreDataManager.sharedInstance.managedObjectContext)
         
         place.name = name
-//        place.date = NSDate()
+        place.date = NSDate()
         
         return place
     }
@@ -39,7 +39,7 @@ public class Place: NSManagedObject {
                 self.imageBig?.imageBig = newValue!.jpegData(compressionQuality: 1) as NSData?
                 self.imageSmall = newValue!.jpegData(compressionQuality: 0.05) as NSData?
             }
-            //date = NSDate()
+            date = NSDate()
         }
         
         get {
