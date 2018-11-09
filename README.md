@@ -1,4 +1,4 @@
-# ![Logo](https://github.com/AlexeyVoronov96/Places/blob/master/Places/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29%401x.png) Places
+# ![Logo](https://github.com/AlexeyVoronov96/Places/blob/master/Places/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20%401x.png) Places
 ![LaunchScreen](https://github.com/AlexeyVoronov96/Places/blob/master/Screenshots/LaunchScreen.png)
 ## 1. Add place with your current location. 
 ### You can name your location and attach photo.
