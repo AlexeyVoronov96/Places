@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 
 class MapController: UIViewController {
-    
     //MARK: - Properties
     @IBOutlet var mapView: MKMapView!
     
     //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         mapView.showsUserLocation = true
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         mapView.gestureRecognizers = [lpgr]
@@ -46,12 +47,10 @@ class MapController: UIViewController {
         placeController.place = newPlace
         navigationController?.pushViewController(placeController, animated: true)
     }
-
 }
 
 //MARK: - Working with map annotations
 extension MapController: MKMapViewDelegate {
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if annotation is MKUserLocation {
@@ -77,5 +76,4 @@ extension MapController: MKMapViewDelegate {
         placeController.place = selectedPlace
         navigationController?.pushViewController(placeController, animated: true)
     }
-    
 }

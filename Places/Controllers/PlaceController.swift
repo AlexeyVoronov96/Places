@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 class PlaceController: UITableViewController {
-    
     //MARK: - Properties
     var place: Place?
     let imagePicker: UIImagePickerController = UIImagePickerController()
@@ -22,6 +21,8 @@ class PlaceController: UITableViewController {
     //MARK: - Loading view
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         if place?.name != "" {
             navigationItem.title = place?.name
         } else {
@@ -153,12 +154,10 @@ class PlaceController: UITableViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-
 }
 
 //MARK: - Working with image picker
 extension PlaceController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         image.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         picker.dismiss(animated: true, completion: nil)
@@ -167,12 +166,10 @@ extension PlaceController: UIImagePickerControllerDelegate, UINavigationControll
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 //MARK: - Working with map annotation
 extension PlaceController: MKMapViewDelegate {
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if annotation is MKUserLocation {
@@ -194,15 +191,12 @@ extension PlaceController: MKMapViewDelegate {
             CoreDataManager.sharedInstance.saveContext()
         }
     }
-    
 }
 
 //MARK: - UITextField delegate
 extension PlaceController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         doneButton(self)
         return true
     }
-    
 }
