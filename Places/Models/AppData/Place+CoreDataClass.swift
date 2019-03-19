@@ -13,7 +13,6 @@ import UIKit
 
 @objc(Place)
 public class Place: NSManagedObject {
-    
     //MARK: - Adding Place
     class func newPlace(name: String) -> Place {
         let place = Place(context: CoreDataManager.sharedInstance.managedObjectContext)
@@ -110,5 +109,4 @@ public class Place: NSManagedObject {
         
         return df.string(from: self.date! as Date)
     }
-    
 }

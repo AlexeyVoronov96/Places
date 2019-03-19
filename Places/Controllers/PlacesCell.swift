@@ -9,7 +9,6 @@
 import UIKit
 
 class PlacesCell: UITableViewCell {
-    
     //MARK: - Properties
     var place: Place?
 
@@ -34,5 +33,4 @@ class PlacesCell: UITableViewCell {
         placeImage.layer.cornerRadius = placeImage.frame.height / 2
         placeImage.layer.masksToBounds = true
     }
-
 }

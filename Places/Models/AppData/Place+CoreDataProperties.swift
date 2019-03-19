@@ -12,7 +12,6 @@ import CoreData
 
 
 extension Place {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Place> {
         return NSFetchRequest<Place>(entityName: "Place")
     }
@@ -22,5 +21,4 @@ extension Place {
     @NSManaged public var imageSmall: NSData?
     @NSManaged public var location: Location?
     @NSManaged public var imageBig: PlaceImage?
-
 }

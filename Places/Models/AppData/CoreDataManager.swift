@@ -11,7 +11,6 @@ import CoreData
 
 //MARK: - Creating an array containing storage data
 var places: [Place] {
-    
     let request = NSFetchRequest<Place>(entityName: "Place")
     
     let sd = NSSortDescriptor(key: "date", ascending: false)
@@ -28,7 +27,6 @@ var places: [Place] {
 
 //MARK: - Working with local storage
 class CoreDataManager {
-    
     static let sharedInstance = CoreDataManager()
     
     var managedObjectContext: NSManagedObjectContext {
@@ -56,5 +54,4 @@ class CoreDataManager {
             }
         }
     }
-
 }

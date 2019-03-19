@@ -10,7 +10,6 @@ import Foundation
 import MapKit
 
 class PlaceAnnotation: NSObject, MKAnnotation {
-    
     var place: Place
     var coordinate: CLLocationCoordinate2D
     var title: String?
@@ -26,5 +25,4 @@ class PlaceAnnotation: NSObject, MKAnnotation {
             coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
         }
     }
-    
 }

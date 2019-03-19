@@ -12,12 +12,10 @@ import CoreData
 
 
 extension PlaceImage {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PlaceImage> {
         return NSFetchRequest<PlaceImage>(entityName: "PlaceImage")
     }
 
     @NSManaged public var imageBig: NSData?
     @NSManaged public var place: Place?
-
 }

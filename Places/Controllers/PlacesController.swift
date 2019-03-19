@@ -9,7 +9,6 @@
 import UIKit
 
 class PlacesController: UITableViewController {
-    
     //MARK: - Properties
     var selectedPlace: Place?
     
@@ -78,5 +77,4 @@ class PlacesController: UITableViewController {
             (segue.destination as! PlaceController).place = selectedPlace
         }
     }
-
 }

@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 
 struct LocationCoordinate {
-    
     var lat: Double
     var lon: Double
     
@@ -20,7 +19,6 @@ struct LocationCoordinate {
 }
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
-    
     static let sharedInstance = LocationManager()
 
     //MARK: - Properties
@@ -51,5 +49,4 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         
         manager.stopUpdatingLocation()
     }
-    
 }
