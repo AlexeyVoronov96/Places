@@ -17,12 +17,7 @@ class PlaceAnnotation: NSObject, MKAnnotation {
     
     init(place: Place) {
         self.place = place
-        title = place.name
-        
-        if place.locationActual != nil {
-            coordinate = CLLocationCoordinate2D(latitude: place.locationActual!.lat, longitude: place.locationActual!.lon)
-        } else {
-            coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        }
+        self.title = place.name
+        self.coordinate = place.locationActual == nil ? CLLocationCoordinate2D(latitude: 0, longitude: 0) : CLLocationCoordinate2D(latitude: place.locationActual!.lat, longitude: place.locationActual!.lon)
     }
 }

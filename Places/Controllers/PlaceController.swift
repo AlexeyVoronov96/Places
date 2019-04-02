@@ -23,13 +23,9 @@ class PlaceController: UITableViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
-        if place?.name != "" {
-            navigationItem.title = place?.name
-        } else {
-            navigationItem.title = "New place".localize()
-        }
-        textName.text = place?.name
-        image.image = place?.imageActual
+        self.navigationItem.title = place?.name == "" ? "New place".localize() : place?.name
+        self.textName.text = place?.name
+        self.image.image = place?.imageActual
         LocationManager.sharedInstance.requestAuthorization()
         if place?.locationActual != nil {
             mapView.addAnnotation(PlaceAnnotation(place: place!))

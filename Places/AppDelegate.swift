@@ -11,7 +11,6 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
 
@@ -22,18 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
     func applicationWillTerminate(_ application: UIApplication) {
         for place in places {
             if place.imageActual == nil && place.name == "" {
@@ -42,8 +29,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         CoreDataManager.sharedInstance.saveContext()
     }
-
-    
-
 }
 

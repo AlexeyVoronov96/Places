@@ -25,28 +25,27 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     var manager = CLLocationManager()
     
     func requestAuthorization() {
-        manager.requestWhenInUseAuthorization()
+        self.manager.requestWhenInUseAuthorization()
     }
     
     var blockForSave: ((LocationCoordinate) -> Void)?
     
     //MARK: - Receiving current location
     func getCurrentLocation(block: ((LocationCoordinate) -> Void)?) {
-        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            return
-        }
-        blockForSave = block
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.activityType = .other
-        manager.startUpdatingLocation()
+        guard CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse else { return }
+        
+        self.blockForSave = block
+        self.manager.delegate = self
+        self.manager.desiredAccuracy = kCLLocationAccuracyBest
+        self.manager.activityType = .other
+        self.manager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let lc = LocationCoordinate.create(location: locations.last!)
-        blockForSave?(lc)
+        self.blockForSave?(lc)
         
-        manager.stopUpdatingLocation()
+        self.manager.stopUpdatingLocation()
     }
 }

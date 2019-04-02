@@ -36,9 +36,8 @@ class MapController: UIViewController {
     
     //MARK: - Processing long press
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
-        if recognizer.state != .began {
-            return
-        }
+        guard recognizer.state == UIGestureRecognizer.State.began else { return }
+        
         let point = recognizer.location(in: mapView)
         let c = mapView.convert(point, toCoordinateFrom: mapView)
         let newPlace = Place.newPlace(name: "")

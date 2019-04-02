@@ -18,11 +18,7 @@ var places: [Place] {
     
     let array = try? CoreDataManager.sharedInstance.managedObjectContext.fetch(request)
     
-    if array != nil {
-        return array!
-    }
-    
-    return []
+    return array ?? []
 }
 
 //MARK: - Working with local storage
